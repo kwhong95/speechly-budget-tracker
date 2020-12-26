@@ -38,26 +38,26 @@ const Form = () => {
       </Grid>
       <Grid item xs={6}>
         <FormControl fullWidth>
-          <InputLabel>유형</InputLabel>
+          <InputLabel>Type</InputLabel>
           <Select value={formData.type} onChange={(e) => setFormData({ ...formData, type: e.target.value })}>
-            <MenuItem value="Income">수입</MenuItem>
-            <MenuItem value="Expense">지출</MenuItem>
+            <MenuItem value="Income">Income</MenuItem>
+            <MenuItem value="Expense">Expense</MenuItem>
           </Select>
         </FormControl>
       </Grid>
       <Grid item xs={6}>
         <FormControl>
-          <InputLabel>항목</InputLabel>
+          <InputLabel>Category</InputLabel>
           <Select value={formData.category} onChange={(e) => setFormData({ ...formData, category: e.target.value })}>
             {selectedCategories.map((c) => <MenuItem value={c.type}>{c.type}</MenuItem>)}
           </Select>
         </FormControl>
       </Grid>
       <Grid item xs={6}>
-        <TextField type="number" label="금액" fullWidth value={formData.amount} onChange={(e) => setFormData({ ...formData, amount: e.target.value })} />
+        <TextField type="number" label="Amount" fullWidth value={formData.amount} onChange={(e) => setFormData({ ...formData, amount: e.target.value })} />
       </Grid>
       <Grid item xs={6}>
-        <TextField type="date" label="날짜" fullWidth value={formData.date} onChange={(e) => setFormData({ ...formData, date: formatDate(e.target.value) })} />
+        <TextField type="date" label="Date" fullWidth value={formData.date} onChange={(e) => setFormData({ ...formData, date: formatDate(e.target.value) })} />
       </Grid>
       <Button className={classes.button} variant="outlined" color="primary" fullWidth onClick={createTransaction}>추가하기</Button> 
     </Grid>
